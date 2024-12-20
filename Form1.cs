@@ -27,6 +27,10 @@ namespace 开机启动橘子桌面宠物_启动器
                 this.Close();
                 return;
             }
+            if (!File.Exists(Application.StartupPath + "auto_startup_launcher_config.txt"))
+            {
+                File.WriteAllText(Application.StartupPath + "auto_startup_launcher_config.txt");
+            }
             Process.Start(Application.StartupPath + "橘子桌面宠物.exe");
         }
     }
